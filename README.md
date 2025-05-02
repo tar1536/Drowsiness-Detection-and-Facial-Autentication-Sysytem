@@ -29,14 +29,17 @@
  pip install flask flask-cors imutils dlib opencv-python opencv-contrib-python numpy pydub requests
  Ensure `ffmpeg` is installed and accessible for `pydub` to play audio.
  2. Run Drowsiness Detection
- python trial.py --alarm alarm.wav- Open `get_location.html` in a browser to allow location sharing.- Press `q` to quit the video feed.
+ python Drowsiness Detection.py --alarm alarm.wav- Open `get_location.html` in a browser to allow location sharing.- Press `q` to quit the video feed.
  3. Run Face Recognition
  python faceid.py
  Select:- `1`: To capture and train face data.- `2`: To launch the face lock authentication system.
  Security & Alerts- Alerts are sent to multiple users via Telegram using the bot token and chat IDs.- The system only sends alerts if drowsiness or yawning is 
  detected **twice**, reducing false
  positives.
- Deployment Notes- Ensure Flask server is accessible from the browser running `get_location.html` (default is
- `localhost:5000`).- Replace the bot token and chat IDs in `trial.py` with your own for real use.
+ 
+ # Deployment Notes- 
+ Ensure Flask server is accessible from the browser running `get_location.html` (default is
+ `localhost:5000`).- Replace the bot token and chat IDs in `Drowsiness Detection.py` with your own for real use.
+ 
  Credits- Facial landmark detection using `dlib`.- Face recognition via OpenCV LBPH algorithm.
 - Real-time video processing with `imutils` and OpenCV.- Telegram alerts via `requests`.
