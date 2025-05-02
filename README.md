@@ -12,9 +12,9 @@
  4. Face Lock System- Uses OpenCV's LBPH recognizer to authenticate user identity.- Trains on multiple facial angles and detects movement before capturing.- Grants 
     access only to authorized individuals.
 
-** Project Structure**
+# Project Structure
  
- 1. Drowsiness Detection.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
+ 1. Drowsiness Detection.py  (Use your telegram bot id as well as chat ids in the configuration section)  # Main script for drowsiness/yawn detection with Telegram/location alerts
  2. faceid.py              # Face recognition system (capture & access)
  3. get_location.html      # Browser-based geolocation sender
  4. alarm.wav              # Alarm sound file (required)
