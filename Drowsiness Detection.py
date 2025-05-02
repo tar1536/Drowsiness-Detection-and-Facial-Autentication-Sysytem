@@ -17,8 +17,8 @@ from pydub import AudioSegment
 from pydub.playback import play
 
 # ========== CONFIGURATION ==========
-BOT_TOKEN = "7889555199:AAGCBtoh7EGIMYiz3xR-613ItbSfDWOsg0o"
-CHAT_IDS = ["6770502184", "1642067434", "5395592750", "1083949298"]
+BOT_TOKEN = "USE A BOT TOKEN"
+CHAT_IDS = [USE OWN TELERAM IDS]
 latest_coords = {'lat': None, 'lon': None}
 
 # ========== TELEGRAM UTILITIES ==========
