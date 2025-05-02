@@ -14,7 +14,7 @@
 
 ** Project Structure**
  
- 1. trial.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
+ 1. Drowsiness Detection.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
  2. faceid.py              # Face recognition system (capture & access)
  3. get_location.html      # Browser-based geolocation sender
  4. alarm.wav              # Alarm sound file (required)
