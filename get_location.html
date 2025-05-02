@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Driver Location Auto Sender</title>
+</head>
+<body>
+
+<h2>Driver Location Status</h2>
+<p id="status">Waiting for server request...</p>
+
+<script>
+// Function to send current geolocation to Flask server
+function sendCurrentLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            function(position) {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+
+                fetch("http://localhost:5000/send_location", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ latitude: lat, longitude: lon })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("status").innerText = `Location sent: ${lat.toFixed(5)}, ${lon.toFixed(5)}`;
+                    console.log("Location sent:", data);
+                })
+                .catch(error => {
+                    console.error("Error sending location:", error);
+                    document.getElementById("status").innerText = "Failed to send location.";
+                });
+            },
+            function(error) {
+                console.error("Geolocation error:", error);
+                document.getElementById("status").innerText = "Location permission denied or unavailable.";
+            }
+        );
+    } else {
+        document.getElementById("status").innerText = "Geolocation not supported by this browser.";
+    }
+}
+
+// Listen for Flask server's command via SSE
+function listenForLocationRequests() {
+    const eventSource = new EventSource("http://localhost:5000/stream");
+
+    eventSource.onmessage = function(event) {
+        console.log("Server says:", event.data);
+
+        if (event.data.trim() === "send_location") {
+            document.getElementById("status").innerText = "Server requested location... sending!";
+            sendCurrentLocation();
+        }
+    };
+
+    eventSource.onerror = function(event) {
+        console.error("SSE connection error:", event);
+        document.getElementById("status").innerText = "Lost connection to server.";
+    };
+}
+
+// Start listening immediately when the page loads
+window.onload = listenForLocationRequests;
+</script>
+
+</body>
+</html>
