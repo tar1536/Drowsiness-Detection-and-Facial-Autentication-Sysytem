@@ -23,7 +23,8 @@
  7. res10_300x300_ssd_iter_140000.caffemodel  # Face detection model
  8. face_dataset/          # Stores training face images
  9. face_trained_model.yml # Trained LBPH face model
- How to Run
+
+ # How to Run
  1. Install Requirements
  pip install flask flask-cors imutils dlib opencv-python opencv-contrib-python numpy pydub requests
  Ensure `ffmpeg` is installed and accessible for `pydub` to play audio.
