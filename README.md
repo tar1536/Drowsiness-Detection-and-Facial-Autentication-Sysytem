@@ -11,7 +11,8 @@
  3. Flask server.- Flask sends GPS location to predefined Telegram chat IDs.
  4. Face Lock System- Uses OpenCV's LBPH recognizer to authenticate user identity.- Trains on multiple facial angles and detects movement before capturing.- Grants 
     access only to authorized individuals.
- Project Structure
+
+** Project Structure**
  
  1. trial.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
  2. faceid.py              # Face recognition system (capture & access)
