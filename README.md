@@ -13,15 +13,15 @@
     access only to authorized individuals.
  Project Structure
  
- trial.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
- faceid.py              # Face recognition system (capture & access)
- get_location.html      # Browser-based geolocation sender
- alarm.wav              # Alarm sound file (required)
- shape_predictor_68_face_landmarks.dat  # Facial landmarks model (required)
- deploy.prototxt        # Face detection prototxt (required for faceid.py)
- res10_300x300_ssd_iter_140000.caffemodel  # Face detection model
- face_dataset/          # Stores training face images
- face_trained_model.yml # Trained LBPH face model
+ 1. trial.py               # Main script for drowsiness/yawn detection with Telegram/location alerts
+ 2. faceid.py              # Face recognition system (capture & access)
+ 3. get_location.html      # Browser-based geolocation sender
+ 4. alarm.wav              # Alarm sound file (required)
+ 5. shape_predictor_68_face_landmarks.dat  # Facial landmarks model (required)
+ 6. deploy.prototxt        # Face detection prototxt (required for faceid.py)
+ 7. res10_300x300_ssd_iter_140000.caffemodel  # Face detection model
+ 8. face_dataset/          # Stores training face images
+ 9. face_trained_model.yml # Trained LBPH face model
  How to Run
  1. Install Requirements
  pip install flask flask-cors imutils dlib opencv-python opencv-contrib-python numpy pydub requests
